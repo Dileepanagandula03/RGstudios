@@ -1,0 +1,95 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, Instagram, Linkedin, Facebook, ArrowRight } from 'lucide-react';
+import Logo from './Logo';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-black text-white pt-16 pb-8 border-t border-white/5 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#E91E63]/5 rounded-full blur-[120px] pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+          
+          {/* Brand Column */}
+          <div className="space-y-6 col-span-1 md:col-span-1">
+            <Link to="/" className="inline-block group transition-transform hover:scale-105">
+              <Logo className="w-12 h-12" light />
+            </Link>
+            <p className="text-gray-400 font-light text-xs leading-relaxed max-w-xs">
+              We replace cold automation with human growth systems. 
+              <span className="block mt-1 text-white/90 font-medium italic">Infrastructure for the human era.</span>
+            </p>
+            <div className="flex space-x-5">
+              <a href="#" className="text-gray-500 hover:text-[#E91E63] transition-all"><Instagram size={18} /></a>
+              <a href="#" className="text-gray-500 hover:text-[#E91E63] transition-all"><Linkedin size={18} /></a>
+            </div>
+          </div>
+
+          {/* Navigation Column */}
+          <div className="space-y-4">
+            <h4 className="text-[#E91E63] text-[9px] uppercase tracking-[5px] font-black">Explore</h4>
+            <ul className="space-y-2">
+              <li><Link to="/" className="text-gray-400 hover:text-white text-xs transition-all">Home</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-white text-xs transition-all">About</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-white text-xs transition-all">Services</Link></li>
+              <li><Link to="/portfolio/case-studies" className="text-gray-400 hover:text-white text-xs transition-all">Case Studies</Link></li>
+            </ul>
+          </div>
+
+          {/* Systems Column */}
+          <div className="space-y-4">
+            <h4 className="text-[#E91E63] text-[9px] uppercase tracking-[5px] font-black">Systems</h4>
+            <ul className="space-y-2">
+              <li><Link to="/services/cold-email" className="text-gray-400 hover:text-white text-xs transition-all">Cold Email Marketing</Link></li>
+              <li><Link to="/services/lead-generation" className="text-gray-400 hover:text-white text-xs transition-all">Lead Generation</Link></li>
+              <li><Link to="/services/ai-agents" className="text-gray-400 hover:text-white text-xs transition-all">AI Agents / Chatbots</Link></li>
+              <li><Link to="/services/website-experience" className="text-gray-400 hover:text-white text-xs transition-all">Website Experience</Link></li>
+              <li><Link to="/services/social-media-marketing" className="text-gray-400 hover:text-white text-xs transition-all">Social Media Marketing</Link></li>
+              <li><Link to="/services/content-marketing" className="text-gray-400 hover:text-white text-xs transition-all">Content Creation Ecosystem</Link></li>
+            </ul>
+          </div>
+
+          {/* Connect Column */}
+          <div className="space-y-6">
+            <h4 className="text-[#E91E63] text-[9px] uppercase tracking-[5px] font-black">Connect</h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 group">
+                <Mail size={14} className="text-[#E91E63]" />
+                <span className="text-gray-300 text-xs font-light">rikagarstudios@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-3 group">
+                <Phone size={14} className="text-[#E91E63]" />
+                <span className="text-gray-300 text-xs font-light">+1 618-448-1540</span>
+              </div>
+            </div>
+            
+            <div className="pt-2">
+              <Link to="/contact" className="inline-flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[2px] py-2.5 px-6 rounded-full border border-[#E91E63]/30 hover:bg-[#E91E63] transition-all group">
+                Apply Now <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar - Block 6 Integration */}
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-[8px] uppercase tracking-[3px] font-black">
+          <p className="order-2 md:order-1 mt-6 md:mt-0">© 2026 Rika Studios. All rights reserved.</p>
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 order-1 md:order-2">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="opacity-20 hidden md:inline">·</span>
+            <Link to="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
+            <span className="opacity-20 hidden md:inline">·</span>
+            <Link to="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
+            <span className="opacity-20 hidden md:inline">·</span>
+            <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
